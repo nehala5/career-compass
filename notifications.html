@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Compass | Notifications</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <script defer src="js/notifications.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-resize-handle"></div>
+      <h2>Career Compass</h2>
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="placements.html">Placement Management</a></li>
+        <li><a href="users.html">User Management</a></li>
+        <li><a href="students.html">Student Applications</a></li>
+        <li><a href="companies.html">Company Management</a></li>
+        <li><a href="analytics.html">Reports & Analytics</a></li>
+        <li><a href="notifications.html" class="active">Notifications</a></li>
+        <li><a href="chatbot.html">Chatbot</a></li>
+        <li><a href="followups.html">Follow-ups</a></li>
+        <li><a href="faculty-dashboard.html">Faculty Dashboard</a></li>
+      </ul>
+      <div class="toggle-container">
+        <label for="darkModeToggle">🌌 Cosmic Mode</label>
+        <input type="checkbox" id="darkModeToggle" />
+      </div>
+    </aside>
+
+    <main class="main">
+      <header>
+        <h1>Notifications</h1>
+      </header>
+
+      <section class="notifications">
+        <ul id="notificationList"></ul>
+        <button id="addNotificationBtn" class="btn-add">Add Notification</button>
+      </section>
+
+      <section id="notificationForm" style="display: none;">
+        <form id="notificationFormData">
+          <div class="form-group">
+            <input type="number" id="receiver_id" placeholder="Receiver ID" required>
+            <input type="text" id="message" placeholder="Message" required>
+          </div>
+          <button type="submit" id="saveNotificationBtn">Add Notification</button>
+          <button type="button" id="cancelNotificationBtn">Cancel</button>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

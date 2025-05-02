@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Compass | Faculty Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/scripts.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-resize-handle"></div>
+            <h2>Career Compass</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="users.html">User Management</a></li>
+                <li><a href="placements.html">Placement Management</a></li>
+                <li><a href="students.html">Student Applications</a></li>
+                <li><a href="companies.html">Company Management</a></li>
+                <li><a href="analytics.html">Reports & Analytics</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="chatbot.html">Chatbot</a></li>
+                <li><a href="followups.html">Follow-ups</a></li>
+                <li><a href="faculty-dashboard.html">Faculty Dashboard</a></li>
+            </ul>
+            <div class="toggle-container">
+                <label for="darkModeToggle">🌙 Dark Mode </label>
+                <input type="checkbox" id="darkModeToggle" />
+            </div>
+        </aside>
+
+        <main class="main">
+            <header>
+                <h1>Faculty Dashboard</h1>
+            </header>
+
+            <section class="cards">
+                <div class="card">
+                    <h3>My Students</h3>
+                    <p class="counter" data-target="0">0</p>
+                </div>
+                <div class="card">
+                    <h3>Pending Reviews</h3>
+                    <p class="counter" data-target="0">0</p>
+                </div>
+            </section>
+
+            <section class="notifications">
+                <h2>Upcoming Tasks</h2>
+                <ul id="facultyTasks"></ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Career Compass | Placement Management</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="js/placements.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-resize-handle"></div>
+            <h2>Career Compass</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="users.html">User Management</a></li>
+                <li><a href="placements.html" class="active">Placement Management</a></li>
+                <li><a href="students.html">Student Management</a></li>
+                <li><a href="companies.html">Company Management</a></li>
+                <li><a href="analytics.html">Reports & Analytics</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="chatbot.html">Chatbot</a></li>
+                <li><a href="followups.html">Follow-ups</a></li>
+                <li><a href="faculty-dashboard.html">Faculty Dashboard</a></li>
+            </ul>
+            <div class="toggle-container">
+                <label for="darkModeToggle">🌌 Cosmic Mode</label>
+                <input type="checkbox" id="darkModeToggle" />
+            </div>
+        </aside>
+
+        <main class="main">
+            <header>
+                <h1>Placement Management</h1>
+                <div>
+                    <input type="text" id="searchPlacements" placeholder="Search by Company or Job Title..." oninput="filterPlacements()">
+                    <button id="addPlacementBtn" class="btn-add">Add Placement</button>
+                </div>
+            </header>
+
+            <section id="placementForm" style="display: none;">
+                <form id="placementFormData">
+                    <div class="form-group">
+                        <input type="number" id="user_id" placeholder="User ID" required>
+                        <input type="text" id="company_name" placeholder="Company Name" required>
+                        <input type="text" id="job_title" placeholder="Job Title" required>
+                        <input type="date" id="application_date" placeholder="Application Date">
+                        <select id="status">
+                            <option value="" disabled selected>Select Status</option>
+                            <option value="Applied">Applied</option>
+                            <option value="Shortlisted">Shortlisted</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Offered">Offered</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                        <input type="number" id="package" placeholder="Package (LPA)">
+                        <input type="text" id="location" placeholder="Location">
+                    </div>
+                    <button type="submit" id="savePlacementBtn">Add Placement</button>
+                    <button type="button" id="cancelPlacementBtn">Cancel</button>
+                </form>
+            </section>
+
+            <section>
+                <table id="placementTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>User ID</th>
+                            <th>Company Name</th>
+                            <th>Job Title</th>
+                            <th>Application Date</th>
+                            <th>Status</th>
+                            <th>Package</th>
+                            <th>Location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

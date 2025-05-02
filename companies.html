@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Career Compass | Company Management</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="js/companies.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-resize-handle"></div>
+            <h2>Career Compass</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="users.html">User Management</a></li>
+                <li><a href="placements.html">Placement Management</a></li>
+                <li><a href="students.html">Student Management</a></li>
+                <li><a href="companies.html" class="active">Company Management</a></li>
+                <li><a href="analytics.html">Reports & Analytics</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="chatbot.html">Chatbot</a></li>
+                <li><a href="followups.html">Follow-ups</a></li>
+                <li><a href="faculty-dashboard.html">Faculty Dashboard</a></li>
+            </ul>
+            <div class="toggle-container">
+                <label for="darkModeToggle">🌌 Cosmic Mode</label>
+                <input type="checkbox" id="darkModeToggle" />
+            </div>
+        </aside>
+
+        <main class="main">
+            <header>
+                <h1>Company Management</h1>
+                <div>
+                    <input type="text" id="searchCompanies" placeholder="Search by Name or Industry..." oninput="filterCompanies()">
+                    <button id="addCompanyBtn" class="btn-add">Add Company</button>
+                </div>
+            </header>
+
+            <section id="companyForm" style="display: none;">
+                <form id="companyFormData">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Company Name" required>
+                        <input type="text" id="industry" placeholder="Industry">
+                        <input type="text" id="address" placeholder="Address">
+                        <input type="email" id="contact_email" placeholder="Contact Email">
+                        <input type="url" id="website" placeholder="Website">
+                        <input type="text" id="contact_phone" placeholder="Contact Phone">
+                    </div>
+                    <button type="submit" id="saveCompanyBtn">Add Company</button>
+                    <button type="button" id="cancelCompanyBtn">Cancel</button>
+                </form>
+            </section>
+
+            <section>
+                <table id="companyTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Industry</th>
+                            <th>Address</th>
+                            <th>Contact Email</th>
+                            <th>Website</th>
+                            <th>Contact Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Google</td><td>Technology</td><td>1600 Amphitheatre Pkwy, Mountain View, CA</td><td>contact@google.com</td><td><a href="https://www.google.com" target="_blank">Visit</a></td><td>650-253-0000</td><td><button class="edit" onclick="editCompany(1)">Edit</button><button class="delete" onclick="deleteCompany(1)">Delete</button></td></tr>
+                        <tr><td>2</td><td>Microsoft</td><td>Technology</td><td>One Microsoft Way, Redmond, WA</td><td>info@microsoft.com</td><td><a href="https://www.microsoft.com" target="_blank">Visit</a></td><td>425-882-8080</td><td><button class="edit" onclick="editCompany(2)">Edit</button><button class="delete" onclick="deleteCompany(2)">Delete</button></td></tr>
+                        <tr><td>3</td><td>Tesla</td><td>Automotive</td><td>3500 Deer Creek Rd, Palo Alto, CA</td><td>support@tesla.com</td><td><a href="https://www.tesla.com" target="_blank">Visit</a></td><td>888-518-3752</td><td><button class="edit" onclick="editCompany(3)">Edit</button><button class="delete" onclick="deleteCompany(3)">Delete</button></td></tr>
+                        <tr><td>4</td><td>Apple</td><td>Technology</td><td>One Apple Park Way, Cupertino, CA</td><td>contact@apple.com</td><td><a href="https://www.apple.com" target="_blank">Visit</a></td><td>408-996-1010</td><td><button class="edit" onclick="editCompany(4)">Edit</button><button class="delete" onclick="deleteCompany(4)">Delete</button></td></tr>
+                        <tr><td>5</td><td>Amazon</td><td>Technology</td><td>410 Terry Ave N, Seattle, WA</td><td>support@amazon.com</td><td><a href="https://www.amazon.com" target="_blank">Visit</a></td><td>206-266-1000</td><td><button class="edit" onclick="editCompany(5)">Edit</button><button class="delete" onclick="deleteCompany(5)">Delete</button></td></tr>
+                        <tr><td>6</td><td>Samsung</td><td>Technology</td><td>129 Samsung-ro, Suwon, South Korea</td><td>info@samsung.com</td><td><a href="https://www.samsung.com" target="_blank">Visit</a></td><td>+82-2-2255-0114</td><td><button class="edit" onclick="editCompany(6)">Edit</button><button class="delete" onclick="deleteCompany(6)">Delete</button></td></tr>
+                        <tr><td>7</td><td>Intel</td><td>Technology</td><td>2200 Mission College Blvd, Santa Clara, CA</td><td>support@intel.com</td><td><a href="https://www.intel.com" target="_blank">Visit</a></td><td>408-765-8080</td><td><button class="edit" onclick="editCompany(7)">Edit</button><button class="delete" onclick="deleteCompany(7)">Delete</button></td></tr>
+                        <tr><td>8</td><td>Facebook</td><td>Technology</td><td>1 Hacker Way, Menlo Park, CA</td><td>info@meta.com</td><td><a href="https://www.meta.com" target="_blank">Visit</a></td><td>650-543-4800</td><td><button class="edit" onclick="editCompany(8)">Edit</button><button class="delete" onclick="deleteCompany(8)">Delete</button></td></tr>
+                        <tr><td>9</td><td>StarTech</td><td>Technology</td><td>123 Cosmic Lane, Bangalore</td><td>contact@startech.com</td><td><a href="https://startech.com" target="_blank">Visit</a></td><td>9876543210</td><td><button class="edit" onclick="editCompany(9)">Edit</button><button class="delete" onclick="deleteCompany(9)">Delete</button></td></tr>
+                        <tr><td>10</td><td>Nebula Solutions</td><td>Consulting</td><td>456 Galaxy St, Hyderabad</td><td>info@nebulasol.com</td><td><a href="https://nebulasol.com" target="_blank">Visit</a></td><td>8765432109</td><td><button class="edit" onclick="editCompany(10)">Edit</button><button class="delete" onclick="deleteCompany(10)">Delete</button></td></tr>
+                        <tr><td>11</td><td>CosmoCorp</td><td>Software</td><td>789 Orbit Rd, Chennai</td><td>support@cosmocorp.com</td><td><a href="https://cosmocorp.com" target="_blank">Visit</a></td><td>7654321098</td><td><button class="edit" onclick="editCompany(11)">Edit</button><button class="delete" onclick="deleteCompany(11)">Delete</button></td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

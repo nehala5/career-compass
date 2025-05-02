@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports & Analytics</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <script defer src="js/scripts.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+        <div class="sidebar-resize-handle"></div>
+        <h2>Career Compass</h2>
+        <ul>
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="users.html">User Management</a></li>
+            <li><a href="placements.html">Placement Management</a></li>
+            <li><a href="students.html">Student Applications</a></li>
+            <li><a href="companies.html">Company Management</a></li>
+            <li><a href="analytics.html">Reports & Analytics</a></li>
+            <li><a href="notifications.html">Notifications</a></li>
+            <li><a href="chatbot.html">Chatbot</a></li>
+            <li><a href="followups.html">Follow-ups</a></li>
+            <li><a href="faculty-dashboard.html">Faculty Dashboard</a></li>
+        </ul>
+        <div class="toggle-container">
+            <label for="darkModeToggle">🌙 Dark Mode </label>
+            <input type="checkbox" id="darkModeToggle" />
+        </div>
+    </aside>
+
+    <main class="main">
+      <header>
+        <h1>Reports & Analytics</h1>
+        <div class="filters">
+          <label for="branchSelect">Branch:</label>
+          <select id="branchSelect">
+            <option value="ALL">ALL</option>
+            <option value="CSE">CSE</option>
+            <option value="IT">IT</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+          </select>
+          <label for="chartType">Chart Type:</label>
+          <select id="chartType">
+            <option value="pie">Pie Chart</option>
+            <option value="bar">Bar Chart</option>
+          </select>
+        </div>
+      </header>
+
+      <section>
+        <h3>Placement Statistics</h3>
+        <div id="chartContainer" style="position: relative; width: 100%; max-width: 600px; height: 400px; margin: 0 auto;">
+          <canvas id="analyticsChart"></canvas>
+        </div>
+        <h3>Placement Trends</h3>
+        <div style="position: relative; width: 100%; max-width: 600px; height: 400px; margin: 0 auto;">
+          <canvas id="trendChart"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
